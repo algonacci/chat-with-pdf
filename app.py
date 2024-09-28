@@ -22,10 +22,8 @@ def chat():
         file = request.files['pdfFile']
         if file and file.filename.endswith('.pdf'):
                 try:
-                    # Save the uploaded PDF temporarily
                     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
                     file.save(file_path)
-
 
                     RAG_app.add("pdf_file", file_path),
 
